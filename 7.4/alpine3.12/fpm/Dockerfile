@@ -60,9 +60,9 @@ ENV PHP_LDFLAGS="-Wl,-O1 -pie"
 
 ENV GPG_KEYS 42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312
 
-ENV PHP_VERSION 7.4.12
-ENV PHP_URL="https://www.php.net/distributions/php-7.4.12.tar.xz" PHP_ASC_URL="https://www.php.net/distributions/php-7.4.12.tar.xz.asc"
-ENV PHP_SHA256="e82d2bcead05255f6b7d2ff4e2561bc334204955820cabc2457b5239fde96b76"
+ENV PHP_VERSION 7.4.16
+ENV PHP_URL="https://www.php.net/distributions/php-7.4.16.tar.xz" PHP_ASC_URL="https://www.php.net/distributions/php-7.4.16.tar.xz.asc"
+ENV PHP_SHA256="1c16cefaf88ded4c92eed6a8a41eb682bb2ef42429deb55f1c4ba159053fb98b"
 
 RUN set -eux; \
 	\
@@ -148,7 +148,6 @@ RUN set -eux; \
 		--with-zlib \
 		\
 # in PHP 7.4+, the pecl/pear installers are officially deprecated (requiring an explicit "--with-pear")
-# ... and are removed in PHP 8+; see also https://github.com/docker-library/php/pull/847#issuecomment-505638229
 		--with-pear \
 		\
 # bundled pcre does not support JIT on s390x
